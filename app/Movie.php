@@ -12,7 +12,15 @@ class Movie {
         $this->name = $name;
         $this->country = $country;
         $this->language= $language;
-        $this->budget= $budget;
+        $this->setBudget($budget);
         $this->RunningTime= $RunningTime;
     }
+    public function setBudget($budget)
+ {
+    if($budget < 0 || $budget == null) {
+        $this->budget = 'unknow';
+    } else {
+        $this->budget = $budget;
+    }
+ }
 }
